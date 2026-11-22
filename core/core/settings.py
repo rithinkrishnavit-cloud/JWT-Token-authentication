@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     # third party
     "rest_framework",
     "rest_framework.authtoken",
+    # JWT authentication
+    "rest_framework_simplejwt",
+    # apps
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -127,4 +131,19 @@ MAILERS = {
     "default": {
         "BACKEND": "django.core.mail.backends.console.EmailBackend",
     },
+}
+
+# This configuration helps DRF check whether a JWT token is present in the requests made to our APIs.
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ],
+}
+
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
