@@ -1,0 +1,42 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+local_settings.py
+production_settings.py
+
+# Virtual Environment & Secrets
+.env
+.venv/
+venv/
+env/
+ENV/
+*.key
+*.pem
+
+# Compiled Python & C Extensions
+*.pyo
+*.pyd
+*.egg
+*.so
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Testing & Coverage
+.tox/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid   
